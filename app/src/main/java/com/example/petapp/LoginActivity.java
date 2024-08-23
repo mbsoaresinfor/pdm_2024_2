@@ -1,6 +1,10 @@
 package com.example.petapp;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,12 +17,38 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+    }
+
+    public void logar(View view) {
+        // pegando os componentes da interface grafica e colocando
+        // aqui no Java.
+        EditText login = findViewById(R.id.editTextLogin);
+        EditText senha = findViewById(R.id.editTextSenha);
+
+        // pegando o conteudo da caixa de login
+        String conteudoLogin = login.getText().toString();
+        // pegando o conteudo da caixa de senha
+        String conteudoSenha = senha.getText().toString();
+
+        if(conteudoLogin.isEmpty()){
+            Toast.makeText(this, "Preencha o campo login", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(conteudoSenha.isEmpty()){
+            Toast.makeText(this, "Preencha o campo senha", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(conteudoLogin.equals("admin") && conteudoSenha.equals("123")){
+            // acessar dashboard
+        }else{
+            Toast.makeText(this, "Usuario ou senha inválida", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
     }
 }

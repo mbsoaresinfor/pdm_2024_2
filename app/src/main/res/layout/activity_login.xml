@@ -7,4 +7,50 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <EditText
+        android:id="@+id/editTextLogin"
+        android:layout_width="380dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="login"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="380dp"
+        android:layout_height="35dp"
+        android:text="Login"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="377dp"
+        android:layout_height="43dp"
+        android:text="Senha"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="96dp" />
+
+    <EditText
+        android:id="@+id/editTextSenha"
+        android:layout_width="375dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="senha"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="142dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="373dp"
+        android:layout_height="62dp"
+        android:onClick="logar"
+        android:text="Logar"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="205dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
