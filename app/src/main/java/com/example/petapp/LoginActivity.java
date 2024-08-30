@@ -1,5 +1,6 @@
 package com.example.petapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -33,17 +34,21 @@ public class LoginActivity extends AppCompatActivity {
         String conteudoSenha = senha.getText().toString();
 
         if(conteudoLogin.isEmpty()){
-            Toast.makeText(this, "Preencha o campo login", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Preencha o campo login",
+                    Toast.LENGTH_SHORT).show();
             return;
         }
 
         if(conteudoSenha.isEmpty()){
-            Toast.makeText(this, "Preencha o campo senha", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Preencha o campo senha",
+                    Toast.LENGTH_SHORT).show();
             return;
         }
 
         if(conteudoLogin.equals("admin") && conteudoSenha.equals("123")){
-            // acessar dashboard
+            // abrindo o dashboard
+            Intent intent = new Intent(this,DashBoardActivity.class);
+            startActivity(intent);
         }else{
             Toast.makeText(this, "Usuario ou senha inválida", Toast.LENGTH_SHORT).show();
             return;
