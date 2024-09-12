@@ -52,12 +52,13 @@ public class LoginActivity extends AppCompatActivity {
                 "maria","joao","jose","ines");
 
         if(listaLogin.contains(conteudoLogin) && conteudoSenha.equals("123")){
-            // abrindo o dashboard
+            // abrindo o dashboard com parametros
             Bundle bundle = new Bundle();
             bundle.putString("login",conteudoLogin);
             Intent intent = new Intent(this,DashBoardActivity.class);
             intent.putExtras(bundle);
             startActivity(intent);
+
         }else{
             Toast.makeText(this, "Usuario ou senha inválida", Toast.LENGTH_SHORT).show();
             return;
