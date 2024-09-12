@@ -13,6 +13,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity {
 
     @Override
@@ -45,9 +48,15 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        if(conteudoLogin.equals("admin") && conteudoSenha.equals("123")){
+        List<String> listaLogin = Arrays.asList("admin","marcelo","pedro",
+                "maria","joao","jose","ines");
+
+        if(listaLogin.contains(conteudoLogin) && conteudoSenha.equals("123")){
             // abrindo o dashboard
+            Bundle bundle = new Bundle();
+            bundle.putString("login",conteudoLogin);
             Intent intent = new Intent(this,DashBoardActivity.class);
+            intent.putExtras(bundle);
             startActivity(intent);
         }else{
             Toast.makeText(this, "Usuario ou senha inválida", Toast.LENGTH_SHORT).show();
