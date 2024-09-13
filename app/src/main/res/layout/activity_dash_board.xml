@@ -7,4 +7,31 @@
     android:layout_height="match_parent"
     tools:context=".DashBoardActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="139dp"
+            app:srcCompat="@mipmap/cachorro" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:onClick="cadastroPet"
+            android:text="Cadastro Pet" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:onClick="listagemPet"
+            android:text="Listagem Pet" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

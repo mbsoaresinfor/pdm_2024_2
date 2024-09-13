@@ -26,8 +26,7 @@
             android:layout_width="401dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:text="login" />
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/textView2"
@@ -41,8 +40,7 @@
             android:layout_width="397dp"
             android:layout_height="50dp"
             android:ems="10"
-            android:inputType="text"
-            android:text="senha" />
+            android:inputType="text" />
 
         <Button
             android:id="@+id/button"
