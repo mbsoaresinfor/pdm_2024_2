@@ -33,5 +33,19 @@
             android:layout_height="68dp"
             android:onClick="listagemPet"
             android:text="Listagem Pet" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:onClick="removerPet"
+            android:text="Remover Pet" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:onClick="atualizarPet"
+            android:text="Atualizar Pet" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

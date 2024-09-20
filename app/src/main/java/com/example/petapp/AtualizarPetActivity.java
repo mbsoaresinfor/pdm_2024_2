@@ -11,25 +11,17 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
-public class ListagemPetActivity extends AppCompatActivity {
-    ArrayList<Pet> listapet ; // criei a variavel
+public class AtualizarPetActivity extends AppCompatActivity {
 
+    ArrayList<Pet> listapet ; // criei a variavel
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listagem_pet);
-        setTitle("Listagem Pet");
+        setContentView(R.layout.activity_atualizar_pet);
+        setTitle("Atualizar Pet");
         listapet =
                 (ArrayList<Pet>) getIntent()
                         .getSerializableExtra("lista_pet");
-        Log.i("pet", "Carregado Listagem Pet com sucesso");
-
-        // listando os dados no LogCat
-        for(Pet pet : DadosCompartilhados.lista){
-            Log.i("pet", "Nome pet: "+ pet.nome);
-            Log.i("pet", "Idade pet: "+ pet.idade);
-            Log.i("pet", "------------------------");
-        }
-
+        Log.i("pet", "Carregado Atualizar Pet com sucesso");
     }
 }
