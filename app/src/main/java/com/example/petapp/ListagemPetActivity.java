@@ -18,7 +18,7 @@ public class ListagemPetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listagem_pet);
-        setTitle("Listagem Pet");
+        setTitle(R.string.title_listagem_pet);
         listapet =
                 (ArrayList<Pet>) getIntent()
                         .getSerializableExtra("lista_pet");

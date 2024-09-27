@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroFrutaActivity">
+    tools:context=".RevisaoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,39 +15,36 @@
         tools:layout_editor_absoluteY="1dp">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nome Fruta" />
+            android:text="Nome" />
 
         <EditText
-            android:id="@+id/editTextNomeFruta"
+            android:id="@+id/editTextNomeRevisao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:inputType="text" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Preço da Fruta" />
+            android:text="Idade" />
 
         <EditText
-            android:id="@+id/editTextPrecoFruta"
+            android:id="@+id/editTextIdadeRevisao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:inputType="text" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="salvarFruta"
-            android:text="salvar" />
-
+            android:onClick="validar"
+            android:text="Validar" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

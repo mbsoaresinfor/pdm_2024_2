@@ -1,7 +1,9 @@
 package com.example.petapp;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,6 +18,10 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.Arrays;
 import java.util.List;
 
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class LoginActivity extends AppCompatActivity {
 
     @Override
@@ -23,7 +29,19 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setTitle("Login");
+        Resources res = getResources();
+        String texto = String.
+                format(res
+                        .getString(
+                                R.string
+                                        .teste),
+    "abc");
+        Log.i("pet",texto);
+
+
     }
+
+
 
     public void logar(View view) {
         // pegando os componentes da interface grafica e colocando
