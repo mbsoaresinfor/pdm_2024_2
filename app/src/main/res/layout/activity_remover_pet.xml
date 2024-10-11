@@ -7,4 +7,31 @@
     android:layout_height="match_parent"
     tools:context=".RemoverPetActivity">
 
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Id do Pet" />
+
+        <EditText
+            android:id="@+id/editTextIdPet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="remover"
+            android:text="Remove Pet" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

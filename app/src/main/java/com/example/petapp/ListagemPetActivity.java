@@ -2,6 +2,8 @@ package com.example.petapp;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +32,21 @@ public class ListagemPetActivity extends AppCompatActivity {
             Log.i("pet", "Idade pet: "+ pet.idade);
             Log.i("pet", "------------------------");
         }
+
+        ListView listView = findViewById(R.id.listviewpet);
+        String[] dados =
+                new String[DadosCompartilhados.lista.size()];
+        // passando da lista para o vetor.
+        for(int i=0; i < DadosCompartilhados.lista.size();i++){
+            Pet pet = DadosCompartilhados.lista.get(i);
+            dados[i] = pet.nome + " - "  +pet.idade;
+        }
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<>(this,
+                        android.R.layout.simple_list_item_1,
+                        dados);
+
+        listView.setAdapter(adapter);
 
     }
 }
