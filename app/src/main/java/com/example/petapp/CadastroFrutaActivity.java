@@ -38,10 +38,27 @@ public class CadastroFrutaActivity extends AppCompatActivity {
         }
         Fruta fruta = new Fruta();
         fruta.nome = nomeFruta;
-        fruta.preco = Double.parseDouble(precoFruta);
-        listaFruta.add(fruta);
+        if(eNumero(precoFruta)){
+            fruta.preco = Double.parseDouble(precoFruta);
+            listaFruta.add(fruta);
+        }else{
+
+        }
+
 
         Toast.makeText(this,"sucesso !!",Toast.LENGTH_LONG).show();
 
     }
+
+    private boolean eNumero(String dado){
+        try{
+            Double.parseDouble(dado);
+            return true;
+        }catch (NumberFormatException e){
+            return false;
+        }
+    }
+
+
+
 }

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 public class CadastroPetActivity extends AppCompatActivity {
     ArrayList<Pet> listapet ; // criei a variavel
+    RepositorioPet repositorioPet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,9 @@ public class CadastroPetActivity extends AppCompatActivity {
                 (ArrayList<Pet>) getIntent()
                 .getSerializableExtra("lista_pet");
         Log.i("pet", "Carregado Cadastro Pet com sucesso");
+
+        repositorioPet = new RepositorioPet(this);
+
     }
 
     public void cadastrar(View view){
@@ -39,10 +43,9 @@ public class CadastroPetActivity extends AppCompatActivity {
             return;
         }
         Pet pet = new Pet();
-        pet.id = DadosCompartilhados.getProximoId();
         pet.nome = nome;
         pet.idade = Integer.parseInt(idade);
-        DadosCompartilhados.lista.add(pet);
+        repositorioPet.adicionarPet(pet);
         Toast.makeText(this,"Cadastro realizado" +
                         " com sucesso.",
                 Toast.LENGTH_LONG).show();
