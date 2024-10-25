@@ -24,7 +24,7 @@ public class RepositorioPet extends SQLiteOpenHelper {
     }
 
     public void adicionarPet(Pet pet){
-        String sql = "insert into pet values(' " +
+        String sql = "insert into pet values(null,'" +
                 pet.nome + "'," + pet.idade + ")";
       Log.i("pet","SQL insert pet: " + sql);
         super.getWritableDatabase().execSQL(sql);

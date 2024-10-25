@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if(listaLogin.contains(conteudoLogin) && conteudoSenha.equals("123")){
             // abrindo o dashboard com parametros
+            DadosCompartilhados.usuarioLogado = conteudoLogin;
             Bundle bundle = new Bundle();
             bundle.putString("login",conteudoLogin);
             Intent intent = new Intent(this,DashBoardActivity.class);
