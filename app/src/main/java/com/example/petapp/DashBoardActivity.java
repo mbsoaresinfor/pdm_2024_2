@@ -69,4 +69,10 @@ public class DashBoardActivity extends AppCompatActivity {
         intent.putExtras(bundle);
         startActivity(intent);
     }
+
+    public void abrirRelatorioLog(View view) {
+        Intent intent = new Intent(this,
+                ListagemLogActivity.class);
+        startActivity(intent);
+    }
 }
