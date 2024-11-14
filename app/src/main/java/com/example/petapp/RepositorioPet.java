@@ -72,7 +72,7 @@ public class RepositorioPet extends SQLiteOpenHelper {
     }
 
     public Pet buscarPet(Integer id){
-        String sql = "select * from pet where id "
+        String sql = "select * from pet where id ="
                 + id;
         Cursor cursor = getWritableDatabase()
                 .rawQuery(sql,null);
@@ -87,6 +87,22 @@ public class RepositorioPet extends SQLiteOpenHelper {
         }
         cursor.close();
         return pet;
+    }
+
+
+    public void removerPet(Integer id){
+        String sql = "delete from pet where id =" + id;
+        getWritableDatabase().execSQL(sql);
+        Log.i("pet","SQL delete pet: " + sql);
+    }
+
+    public void atualizarPet(Pet pet){
+        String sql = "update pet set " +
+                "nome = '" + pet.nome + "',"+
+                "idade = " + pet.idade +
+                " where id = " + pet.id;
+        getWritableDatabase().execSQL(sql);
+        Log.i("pet","SQL update pet: " + sql);
     }
 
 

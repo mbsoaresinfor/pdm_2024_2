@@ -16,6 +16,8 @@ import java.util.ArrayList;
 
 public class RemoverPetActivity extends AppCompatActivity {
     ArrayList<Pet> listapet ; // criei a variavel
+    RepositorioPet repositorioPet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,7 @@ public class RemoverPetActivity extends AppCompatActivity {
         listapet =
                 (ArrayList<Pet>) getIntent()
                         .getSerializableExtra("lista_pet");
+        repositorioPet = new RepositorioPet(this);
         Log.i("pet", "Carregado Remoção Pet com sucesso");
     }
 
@@ -32,16 +35,17 @@ public class RemoverPetActivity extends AppCompatActivity {
         String idString = editText.getText().toString();
         try {
             Integer id = Integer.parseInt(idString);
-            boolean resultado =DadosCompartilhados.lista
-                    .removeIf(obj -> obj.id.equals(id));
-            if(resultado){
-                Toast.makeText(this,"Remoção realizado" +
-                                " com sucesso.",
-                        Toast.LENGTH_LONG).show();
-            }else{
+            Pet pet = repositorioPet.buscarPet(id);
+            if(pet == null){
                 Toast.makeText(this,"nâo encontrado id",
                         Toast.LENGTH_LONG).show();
+                return;
             }
+            repositorioPet.removerPet(id);
+            Toast.makeText(this,"Remoção realizado" +
+                                " com sucesso.",
+                        Toast.LENGTH_LONG).show();
+
 
         }catch(Exception e){
             Toast.makeText(this,"digite somente numeros",
