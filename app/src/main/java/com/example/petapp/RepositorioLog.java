@@ -69,4 +69,12 @@ public class RepositorioLog extends SQLiteOpenHelper {
             cursor.close();
             return lista;
         }
+
+        public void removerLogUsuario(String usuario){
+            String sql = "delete from log where " +
+                    "usuario = '"+ usuario +"'";
+            getWritableDatabase().execSQL(sql);
+            android.util.Log.i("pet","SQL removerLogUsuario: " + sql);
+        }
+
 }

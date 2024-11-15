@@ -29,9 +29,17 @@
             android:onClick="buscarLogs"
             android:text="Buscar Logs" />
 
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="remover"
+            android:text="Remover" />
+
         <ListView
             android:id="@+id/listViewLog"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,13 +28,20 @@ public class ListagemLogActivity extends AppCompatActivity {
     }
 
     public void buscarLogs(View view) {
-        EditText editTextUsuario = findViewById(R.id.editTextUsuario);
+        String usuario = buscarUsuarioTela();
+        buscarEAtualizaDadosTela(usuario);
+    }
 
+    private String buscarUsuarioTela(){
+        EditText editTextUsuario = findViewById(R.id.editTextUsuario);
         String usuario = null;
         if(!editTextUsuario.getText()
                 .toString().isEmpty()){
             usuario =editTextUsuario.getText().toString();
         }
+        return usuario;
+    }
+    private void buscarEAtualizaDadosTela(String usuario){
         List<Log> lista = repositorioLog
                 .listarLogs(usuario);
         String[] dados = new String[lista.size()];
@@ -49,5 +56,12 @@ public class ListagemLogActivity extends AppCompatActivity {
                         dados);
         ListView listView = findViewById(R.id.listViewLog);
         listView.setAdapter(adapter);
+    }
+
+    public void remover(View view) {
+        repositorioLog.
+                removerLogUsuario(DadosCompartilhados.usuarioLogado);
+        String usuario = buscarUsuarioTela();
+        buscarEAtualizaDadosTela(usuario);
     }
 }
